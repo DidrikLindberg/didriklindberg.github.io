@@ -12,7 +12,7 @@ app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-producti
 
 # Configuration - EDIT THESE VALUES
 SITE_CONFIG = {
-    'company_name': 'Your Company Name',
+    'company_name': 'Didrik Lindberg',
     'tagline': 'Custom web apps that actually ship',
     'email': 'contact@yourcompany.com',
     'linkedin': 'https://www.linkedin.com/in/didrik-lindberg-3b2955148/',
@@ -62,79 +62,47 @@ SERVICES = [
             'Eliminate duplicate data entry',
             'Real-time data synchronization',
             'Reduced human error',
-            'Hours saved every week',
-        ]
-    },
-    {
-        'id': 'crm-salesforce',
-        'title': 'CRM & Salesforce Solutions',
-        'icon': '📊',
-        'short_description': 'Salesforce customization, integrations, and custom CRM development.',
-        'full_description': 'Whether you need Salesforce customizations, integrations with other systems, or a completely custom CRM solution, we deliver solutions that fit your sales process.',
-        'deliverables': [
-            'Salesforce customization and configuration',
-            'Custom CRM development',
-            'Integration with marketing and support tools',
-            'Reporting and analytics dashboards',
-            'Training and documentation',
-            'Ongoing support and maintenance',
-        ],
-        'ideal_for': 'Sales teams, B2B businesses, companies using Salesforce, businesses needing custom CRM',
-        'outcomes': [
-            'Better sales pipeline visibility',
-            'Streamlined sales processes',
-            'Integrated customer data',
-            'Actionable insights and reporting',
-        ]
-    },
-    {
-        'id': 'ux-ui-design',
-        'title': 'UX/UI Design',
-        'icon': '🎨',
-        'short_description': 'User-centered design that looks great and drives conversions.',
-        'full_description': 'We design intuitive interfaces that users love. Our process focuses on user research, prototyping, and iterative testing to ensure the final product meets real user needs.',
-        'deliverables': [
-            'User research and personas',
-            'Wireframes and prototypes',
-            'High-fidelity UI designs',
-            'Design systems and style guides',
-            'Usability testing',
-            'Design handoff and developer collaboration',
-        ],
-        'ideal_for': 'Products with low conversion rates, confusing interfaces, or poor user engagement',
-        'outcomes': [
-            'Higher conversion rates',
-            'Reduced support tickets',
-            'Better user satisfaction',
-            'Consistent brand experience',
-        ]
-    },
-    {
-        'id': 'technical-consulting',
-        'title': 'Technical Consulting',
-        'icon': '💡',
-        'short_description': 'Strategic guidance on architecture, tech stack, and development roadmap.',
-        'full_description': 'Get expert advice on technical decisions, architecture reviews, code audits, and development strategy. We help you make informed decisions and avoid costly mistakes.',
-        'deliverables': [
-            'Architecture reviews and recommendations',
-            'Code audits and quality assessments',
-            'Tech stack selection guidance',
-            'Development roadmap planning',
-            'Team mentoring and training',
-            'Written reports and documentation',
-        ],
-        'ideal_for': 'Startups making technical decisions, teams with technical debt, companies planning major upgrades',
-        'outcomes': [
-            'Informed technical decisions',
-            'Reduced technical debt',
-            'Clear development roadmap',
-            'Team skill development',
+            'Better visibility across tooling',
+            'Teams focus on higher-value work',
         ]
     },
 ]
-
 # Projects/Case Studies - EDIT THIS
 PROJECTS = [
+    {
+        'id': 'ephi-audit-system',
+        'title': 'ePHI Audit & Compliance Platform',
+        'client': 'National Behavioral Health Network',
+        'tagline': 'Metadata-driven Salesforce audit layer covering every PHI touchpoint across five critical objects.',
+        'image_placeholder': '🩺',
+        'problem': 'Compliance and security teams lacked field-level visibility into how clinicians and coordinators were touching protected health information. Manual audits across Account, Contact, Assessment, Order, and Program Engagement objects took days and still left blind spots around record views.',
+        'solution': 'Architected a modular audit platform with Apex triggers, Lightning Web Components, and metadata-driven configuration. Triggers capture create/update/delete events per field, while an invisible LWC logs view/close activity in real time. Custom metadata toggles tracked objects and fields without deployments, and BaseDML services guarantee partial-success inserts.',
+        'tech_stack': ['Salesforce Platform', 'Apex', 'Lightning Web Components', 'Custom Metadata Types', 'Field Sets', 'Platform Events'],
+        'results': [
+            '100% Create/View/Edit/Delete coverage across Account, Contact, Assessment, Order, and Program Engagement',
+            'Per-field audit records generated automatically for every change, ready for HIPAA reporting in minutes',
+            'View/close tracking closes blind spots and proves who accessed sensitive records',
+            'Admins adjust tracked fields through metadata with no additional code releases',
+        ],
+        'featured': True,
+    },
+    {
+        'id': 'hipaa-suspicious-login',
+        'title': 'HIPAA Suspicious Login Detection',
+        'client': 'Regional Healthcare System',
+        'tagline': 'Proactive Salesforce security pipeline that flags risky logins within 15 minutes and routes investigators.',
+        'image_placeholder': '🔐',
+        'problem': 'Security leadership needed continuous insight into suspicious login behavior but was stuck exporting LoginHistory weekly and triaging alerts manually. Investigations were slow, inconsistent, and difficult to audit.',
+        'solution': 'Delivered a schedulable + queueable orchestration that sweeps LoginHistory every 15 minutes, evaluates risk via configurable metadata, and writes prioritized alerts to Suspicious_Login__c. Lightning dashboards and reviewer utilities give investigators one queue for triage, while platform events and permission sets enforce least privilege.',
+        'tech_stack': ['Salesforce', 'Apex', 'Platform Events', 'Queueables', 'Lightning Web Components', 'Custom Metadata Types'],
+        'results': [
+            'Continuous monitoring with a 15-minute rolling detection window covering 100% of logins',
+            'Automated investigator queue with deduplicated alerts and merged violation reasons',
+            'Configurable thresholds, whitelists, and schedules managed entirely by admins',
+            'Investigation time reduced by 60% thanks to richer context and prioritized routing',
+        ],
+        'featured': True,
+    },
     {
         'id': 'saas-dashboard',
         'title': 'SaaS Analytics Dashboard',

@@ -9,11 +9,14 @@ python --version
 ```
 
 ### 2. Set Up Virtual Environment
+From the repository root run:
 ```bash
-cd website-v1
+cd website-v1/website-v1
 python -m venv venv
 ```
 
+If you are already inside the `website-v1` folder, skip the `cd` command above.
+ 
 **Windows:**
 ```bash
 venv\Scripts\activate
