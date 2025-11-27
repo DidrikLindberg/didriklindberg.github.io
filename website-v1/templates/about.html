@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% block title %}About Us - {{ config.company_name }}{% endblock %}
 {% block content %}
-<div class="bg-gradient-to-br from-gray-900 to-gray-800 py-20">
+<div class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">About {{ config.company_name }}</h1>
         <p class="max-w-3xl mx-auto text-xl text-gray-300">{{ config.partner_status }} with {{ config.years_experience }} years delivering Salesforce solutions</p>
     </div>
 </div>
-<section class="py-20 bg-white">
+<section class="py-20 bg-white dark:bg-gray-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="prose prose-lg max-w-none">
-            <h2>Our Story</h2>
-            <p>At {{ config.company_name }}, we specialize in building enterprise-grade Salesforce solutions for healthcare, financial services, and enterprise organizations. With over {{ config.years_experience }} years of experience and {{ config.projects_completed }} successful projects, we've become trusted partners for organizations looking to maximize their Salesforce investment.</p>
-            <p>Our team holds multiple Salesforce certifications including Platform Developer II, Application Architect, and System Architect. We're not just developers—we're strategic partners who understand both the technical platform and the business challenges you face.</p>
+            <h2 class="text-gray-900 dark:text-white">Our Story</h2>
+            <p class="text-gray-700 dark:text-gray-300">
+                At {{ config.company_name }}, we specialize in building enterprise-grade Salesforce solutions for healthcare, financial services, and enterprise organizations. With over {{ config.years_experience }} years of experience and {{ config.projects_completed }} successful projects, we've become trusted partners for organizations looking to maximize their Salesforce investment.
+            </p>
+            <p class="text-gray-700 dark:text-gray-300">
+                Our team holds multiple Salesforce certifications including Platform Developer II, Application Architect, and System Architect. We're not just developers—we're strategic partners who understand both the technical platform and the business challenges you face.
+            </p>
         </div>
     </div>
 </section>
