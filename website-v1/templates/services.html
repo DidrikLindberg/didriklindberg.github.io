@@ -6,81 +6,81 @@
 
 {% block content %}
 <!-- Hero Section -->
-<div class="bg-gradient-to-br from-gray-900 to-gray-800 py-20">
+<div class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
             Our Salesforce Services
         </h1>
         <p class="max-w-3xl mx-auto text-xl text-gray-300">
-            From custom Apex development to strategic consulting, we offer comprehensive Salesforce solutions 
+            From custom Apex development to strategic consulting, we offer comprehensive Salesforce solutions
             tailored to your industry and business needs.
         </p>
     </div>
 </div>
 
 <!-- Services Grid -->
-<section class="py-20 bg-gray-50">
+<section class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="space-y-12">
             {% for service in services %}
-            <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-8 md:p-12">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all p-8 md:p-12 border border-gray-100 dark:border-gray-700">
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Left Column -->
                     <div>
                         <div class="flex items-start mb-6">
                             <div class="text-6xl mr-4">{{ service.icon }}</div>
                             <div>
-                                <h2 class="text-3xl font-bold text-gray-900 mb-2">{{ service.title }}</h2>
-                                <p class="text-lg text-gray-600">{{ service.short_description }}</p>
+                                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">{{ service.title }}</h2>
+                                <p class="text-lg text-gray-600 dark:text-gray-300">{{ service.short_description }}</p>
                             </div>
                         </div>
-                        
-                        <p class="text-gray-700 mb-6 leading-relaxed">
+
+                        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                             {{ service.full_description }}
                         </p>
-                        
+
                         <div class="mb-6">
-                            <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Technologies</h3>
+                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-3">Technologies</h3>
                             <div class="flex flex-wrap gap-2">
                                 {% for tech in service.tech_highlights %}
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300">
                                     {{ tech }}
                                 </span>
                                 {% endfor %}
                             </div>
                         </div>
-                        
-                        <div class="bg-blue-50 border-l-4 border-primary-500 p-4 rounded-r-lg">
-                            <p class="text-sm font-medium text-gray-900 mb-1">Ideal For:</p>
-                            <p class="text-sm text-gray-700">{{ service.ideal_for }}</p>
+
+                        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary-500 dark:border-primary-400 p-4 rounded-r-lg">
+                            <p class="text-sm font-medium text-gray-900 dark:text-white mb-1">Ideal For:</p>
+                            <p class="text-sm text-gray-700 dark:text-gray-300">{{ service.ideal_for }}</p>
                         </div>
                     </div>
-                    
+
                     <!-- Right Column -->
                     <div>
                         <div class="mb-8">
-                            <h3 class="text-lg font-bold text-gray-900 mb-4">What You Get</h3>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">What You Get</h3>
                             <ul class="space-y-3">
                                 {% for deliverable in service.deliverables %}
                                 <li class="flex items-start">
-                                    <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="w-6 h-6 text-green-500 dark:text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                     </svg>
-                                    <span class="text-gray-700">{{ deliverable }}</span>
+                                    <span class="text-gray-700 dark:text-gray-300">{{ deliverable }}</span>
                                 </li>
                                 {% endfor %}
                             </ul>
                         </div>
-                        
+
                         <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-4">Expected Outcomes</h3>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Expected Outcomes</h3>
                             <ul class="space-y-3">
                                 {% for outcome in service.outcomes %}
                                 <li class="flex items-start">
-                                    <svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-blue-500 dark:text-blue-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                                     </svg>
-                                    <span class="text-gray-700">{{ outcome }}</span>
+                                    <span class="text-gray-700 dark:text-gray-300">{{ outcome }}</span>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -94,89 +94,89 @@
 </section>
 
 <!-- Engagement Models -->
-<section class="py-20 bg-white">
+<section class="py-20 bg-white dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
                 Flexible Engagement Models
             </h2>
-            <p class="max-w-2xl mx-auto text-xl text-gray-600">
+            <p class="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300">
                 We work how you work best—choose the engagement model that fits your needs.
             </p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Project-Based</h3>
-                <p class="text-gray-600 mb-4">Fixed scope, timeline, and budget for defined deliverables.</p>
-                <ul class="space-y-2 text-sm text-gray-700">
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 border border-gray-200 dark:border-gray-600">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Project-Based</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Fixed scope, timeline, and budget for defined deliverables.</p>
+                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Clear deliverables
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Predictable costs
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Best for defined initiatives
                     </li>
                 </ul>
             </div>
-            
-            <div class="bg-gradient-to-br from-primary-50 to-purple-50 rounded-xl p-8 border-2 border-primary-200 relative">
+
+            <div class="bg-gradient-to-br from-primary-50 to-purple-50 dark:from-primary-900/20 dark:to-purple-900/20 rounded-xl p-8 border-2 border-primary-200 dark:border-primary-700 relative">
                 <div class="absolute top-4 right-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                     POPULAR
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Monthly Retainer</h3>
-                <p class="text-gray-600 mb-4">Ongoing partnership with dedicated hours each month.</p>
-                <ul class="space-y-2 text-sm text-gray-700">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Monthly Retainer</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Ongoing partnership with dedicated hours each month.</p>
+                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Flexible priorities
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Continuous improvement
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Best for ongoing support
                     </li>
                 </ul>
             </div>
-            
-            <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Consulting & Audits</h3>
-                <p class="text-gray-600 mb-4">Strategic guidance and technical assessment services.</p>
-                <ul class="space-y-2 text-sm text-gray-700">
+
+            <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-8 border border-gray-200 dark:border-gray-600">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Consulting & Audits</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Strategic guidance and technical assessment services.</p>
+                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Expert assessment
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Strategic roadmaps
                     </li>
                     <li class="flex items-start">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Best for planning phase
